@@ -1,6 +1,6 @@
 # ⌨️ Type Siege
 
-> A fast-paced neon typing defense game. Defend your core by typing words to destroy waves of cyberpunk enemies.
+> A fast-paced neon typing defense game. Defend your core by typing words to destroy waves of enemies.
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-96.8%25-3178C6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
@@ -11,7 +11,7 @@
 
 ## 🎮 About
 
-**Type Siege** is a browser-based typing defense game set in a cyberpunk neon world. Waves of enemies advance toward your core — your only weapon is your keyboard. Type the words above each enemy before they reach you to destroy them.
+**Type Siege** is a browser-based typing defense game. Waves of enemies advance toward your core — your only weapon is your keyboard. Type the words above each enemy before they reach you to destroy them.
 
 The game tracks your **WPM**, **combo streaks**, and **wave progress**, rewarding fast and accurate typists with higher scores.
 
