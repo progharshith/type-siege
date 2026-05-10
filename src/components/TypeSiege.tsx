@@ -11,11 +11,12 @@
  * Author: progharshith (https://github.com/progharshith)
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GameEngine } from "@/game/engine";
 import { useGame, powerLabel, type PowerKind } from "@/game/store";
 import { getDailyChallenge, type Difficulty, type Pack } from "@/game/words";
 import { ACHIEVEMENTS } from "@/game/achievements";
+import { About } from "@/components/About";
 
 /** Difficulty selector options shown in the pause menu. */
 const DIFFS: { id: Difficulty; label: string }[] = [
@@ -42,6 +43,7 @@ const POWER_GLYPH: Record<PowerKind, string> = {
 export function TypeSiege() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const engineRef = useRef<GameEngine | null>(null);
+  const [showAbout, setShowAbout] = useState(false);
 
   /** Read every HUD value from the store with fine-grained selectors. */
   const phase = useGame((s) => s.phase);
@@ -171,9 +173,16 @@ export function TypeSiege() {
         })}
       </div>
 
-      {/* HINT LINE — bottom-center, reminds players of the core controls */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-7 z-10 text-center text-[10px] uppercase tracking-[0.3em] text-neutral-600">
-        Type · Esc pause · 1 2 3 power-ups
+      {/* HINT LINE + subtle author credit */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-7 z-10 flex items-center justify-center gap-6 text-[10px] uppercase tracking-[0.3em] text-neutral-600">
+        <span>Type · Esc pause · 1 2 3 power-ups</span>
+        <span className="text-neutral-800">·</span>
+        <button
+          onClick={() => setShowAbout(true)}
+          className="pointer-events-auto text-neutral-700 hover:text-neutral-500 transition-colors"
+        >
+          harshith gupta
+        </button>
       </div>
 
       {/* TOASTS — bottom-right stack; auto-dismiss after 3.5 s */}
@@ -286,6 +295,9 @@ export function TypeSiege() {
           </div>
         </Overlay>
       )}
+
+      {/* ABOUT OVERLAY */}
+      {showAbout && <About onClose={() => setShowAbout(false)} />}
     </div>
   );
 }
