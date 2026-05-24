@@ -123,4 +123,4 @@ This project is open source. Feel free to fork and build your own version!
 
 ---
 
-<p align="center">Made with ❤️ by <a href="https://github.com/progharshith">progharshith</a></p>
+<p align="center">Made with <3 by <a href="https://github.com/progharshith">progharshith</a></p>
